@@ -49,7 +49,7 @@ export function loop() {
                 creep.attack(enemySpawn);
             }
         }
-        myCreeps = mySpawn.spawnCreep([constants.MOVE,constants.MOVE,constants.RANGED_ATTACK]).object;
+        myCreeps = mySpawn.spawnCreep([constants.MOVE,constants.MOVE,constants.ATTACK]).object;
 
     } else {
         for(var creep of myCreeps) {
@@ -68,12 +68,12 @@ export function loop() {
             if((creep.attack(enemyCreeps[0]) == constants.ERR_NOT_IN_RANGE) && creep.body.some(bodyPart => bodyPart.type == constants.TOUGH)) {
                 creep.moveTo(enemyCreeps[0]);
             }
-            else if (creep.body.some(bodyPart => bodyPart.type == constants.RANGED_ATTACK)) {
+            else if (creep.body.some(bodyPart => bodyPart.type == constants.ATTACK)) {
                 creep.moveTo(enemySpawn);
                 creep.attack(enemySpawn);
             }
         }
-        myCreeps = mySpawn.spawnCreep([constants.MOVE,constants.RANGED_ATTACK,constants.MOVE,constants.MOVE,constants.TOUGH]).object;
+        myCreeps = mySpawn.spawnCreep([constants.MOVE,constants.ATTACK,constants.MOVE,constants.MOVE,constants.TOUGH]).object;
 
     }
     
